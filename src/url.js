@@ -23,7 +23,7 @@ function shortenLink(e) {
     input.style.border = 'unset'
 
     // console.log(link);
-  fetch('http://159.89.214.197:8000/url', {
+  fetch('http://127.0.0.1:8000/url', {
     method: 'POST',
     headers: {
         'Authorization': 'Bearer f9328cfa962461517d946be606d00f71fd34dd32',
@@ -48,22 +48,22 @@ function shortenLink(e) {
   e.preventDefault();
 }
 
-// function copyTxt(e) {
+function copyTxt(e) {
   
   
-//     /* Get the text field */
-//     let newLink = document.querySelector(".build");
+    /* Get the text field */
+    let newLink = document.querySelector(".build");
 
-//     /* Select the text field */
-//     newLink.select();
-//     newLink.setSelectionRange(0, 99999); /*For mobile devices*/
+    /* Select the text field */
+    newLink.select();
+    newLink.setSelectionRange(0, 99999); /*For mobile devices*/
   
-//     /* Copy the text inside the text field */
-//     document.execCommand("copy");
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
 
 
-//     e.preventDefault();
-// }
+    e.preventDefault();
+}
 
 
 
@@ -89,7 +89,12 @@ function createLink(line, mylink){
 
   const btn = document.createElement('button')
   btn.classList.add('copy-link')
+  
   btn.innerText = 'Copy';
+  btn.onclick = function () {
+    let copyText = short.innerText;
+    navigator.clipboard.writeText(copyText);
+  }
   listDiv.appendChild(btn);
 
   lists.appendChild(listDiv)
