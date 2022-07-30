@@ -23,7 +23,7 @@ function shortenLink(e) {
     input.style.border = 'unset'
 
     // console.log(link);
-  fetch('http://127.0.0.1:8000/url', {
+  fetch('http://159.89.214.197:8000/url', {
     method: 'POST',
     headers: {
         'Authorization': 'Bearer f9328cfa962461517d946be606d00f71fd34dd32',
